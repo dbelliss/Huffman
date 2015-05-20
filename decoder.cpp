@@ -32,6 +32,8 @@ void Decoder::decode(const unsigned  char* encodedMessage, const int encodedSize
     unsigned char* binary = new unsigned char; // CHAR TO READ BINARY CHARACTERS OUT OF
     int size = encodedSize - *pos; // HOW MANY BITS TO READ
     binary[0] = encodedMessage[(*pos)++];
+    
+    
     root->treeTraverse(decodedMessage, encodedMessage, *pos, *decoded, binary, *bit, *byte, size, extra);
      *decodedSize = *decoded;
     return;

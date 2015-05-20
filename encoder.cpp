@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Davey Jay Belliss. All rights reserved.
 #include "encoder.h"
 #include "binaryHeap.cpp"
+#include <fstream>
 //#include "CPUTimer.h"
 Encoder::Encoder()
 {
@@ -75,7 +76,14 @@ void Encoder::encode(const unsigned  char *message, const int size,
    //  CPUTimer ct;
     short bit = 0;
     short* bits = &bit;
-    unsigned char* binary = new unsigned  char[size * 10];
+    unsigned char* binary = new unsigned char[size * 10];
+ //   int* binary = new int;
+
+
+    
+    
+
+//   root->getCode2(leaves, binary, *pos2, *bits, *pos, encodedMessage, size, message);
 
     for (int i = 0; i <= size - 1; i++)
     {
@@ -83,7 +91,8 @@ void Encoder::encode(const unsigned  char *message, const int size,
         leaves[message[i]]->getCode(binary, *pos2, *bits, *pos, encodedMessage);
 
     }
-    
+ 
+
     *binary <<= (7 - bit);
     
     encodedMessage[(*pos)++] = *binary;

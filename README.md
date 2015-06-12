@@ -23,3 +23,5 @@ finished building
 output. 
 * Finally, it compresses the message using the Huffman tree, and converts the 
 1's and 0's to binary with bitshifts
+
+![Huffman](https://github.com/YangVincent/Huffman/blob/master/Huffman.png)
